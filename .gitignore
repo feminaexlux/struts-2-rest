@@ -1,4 +1,10 @@
 #################
+## IntelliJ IDEA
+#################
+.idea/
+*.iml
+
+#################
 ## Eclipse
 #################
 
@@ -162,3 +168,4 @@ pip-log.txt
 # Mac crap
 .DS_Store
 target
+/src/main/resources/rebel.xml

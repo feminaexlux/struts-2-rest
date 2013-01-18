@@ -7,5 +7,5 @@
 			| <a href="/messages/<s:property value="id" />/edit" >edit</a> |
 		</li> 
 	</s:iterator>
-	<a href="/messages/new>">
 </ul>
+<a href="/messages/new">New Message</a>

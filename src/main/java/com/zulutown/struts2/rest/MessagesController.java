@@ -10,7 +10,7 @@ import org.apache.struts2.rest.HttpHeaders;
 import com.opensymphony.xwork2.ModelDriven;
 
 @Results({
-	@Result(name = "update", type = "redirect", location = "/messages/1/edit")
+	@Result(name = "update", type = "redirect", location = "/messages/")
 })
 public class MessagesController implements ModelDriven<Object> {
 
@@ -41,10 +41,7 @@ public class MessagesController implements ModelDriven<Object> {
 	public HttpHeaders update() {
 		System.out.println("update");
 		MessageService.save(model);
-		// redirect to edit page
-		DefaultHttpHeaders headers = new DefaultHttpHeaders("update");
-		headers.disableCaching();
-		return headers;
+		return new DefaultHttpHeaders("update").disableCaching();
 	}
 
 	public HttpHeaders index() {
@@ -60,6 +57,7 @@ public class MessagesController implements ModelDriven<Object> {
 	
 	public HttpHeaders editNew() {
 		System.out.println("editNew");
+		MessageService.save(model);
 		return new DefaultHttpHeaders("edit-new").disableCaching();
 	}
 

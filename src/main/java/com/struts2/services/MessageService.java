@@ -1,9 +1,11 @@
-package com.zulutown.struts2.rest;
+package com.struts2.services;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.struts2.models.Message;
 public class MessageService {
 
 	

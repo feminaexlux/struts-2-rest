@@ -1,4 +1,4 @@
-package com.zulutown.struts2.rest;
+package com.struts2.models;
 
 public class Message {
 	private String id;

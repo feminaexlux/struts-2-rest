@@ -1,4 +1,4 @@
-package com.zulutown.struts2.rest;
+package com.struts2.controllers;
 
 import java.util.Collection;
 
@@ -8,6 +8,8 @@ import org.apache.struts2.rest.DefaultHttpHeaders;
 import org.apache.struts2.rest.HttpHeaders;
 
 import com.opensymphony.xwork2.ModelDriven;
+import com.struts2.models.Message;
+import com.struts2.services.MessageService;
 
 @Results({
 	@Result(name = "update", type = "redirect", location = "/messages/")

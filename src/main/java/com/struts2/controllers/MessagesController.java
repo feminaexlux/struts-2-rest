@@ -13,7 +13,8 @@ import com.struts2.services.MessageService;
 
 @Results({
 	@Result(name = "update", type = "redirect", location = "/messages/"),
-	@Result(name="destroy", type = "redirect", location = "/messages/")
+	@Result(name = "destroy", type = "redirect", location = "/messages/"),
+	@Result(name = "create", type = "redirect", location = "/messages/")
 })
 public class MessagesController implements ModelDriven<Object> {
 
@@ -22,39 +23,43 @@ public class MessagesController implements ModelDriven<Object> {
 	private Message model = new Message();
 	private String id;
 	private Collection<Message> list;
+	private String text;
+	private String author;
 
 	public HttpHeaders create() {
+		model = new Message();
+		model.setAuthor(author);
+		model.setText(text);
 		MessageService.save(model);
 		list = MessageService.findAll();
-		return new DefaultHttpHeaders("index").disableCaching();
+		return new DefaultHttpHeaders("create");
 	}
 
 	public HttpHeaders destroy() {
 		MessageService.remove(id);
-		return new DefaultHttpHeaders("destroy").disableCaching();
+		return new DefaultHttpHeaders("destroy");
 	}
 
 	public HttpHeaders show() {
-		return new DefaultHttpHeaders("show").disableCaching();
+		return new DefaultHttpHeaders("show");
 	}
 
 	public HttpHeaders update() {
 		MessageService.save(model);
-		return new DefaultHttpHeaders("update").disableCaching();
+		return new DefaultHttpHeaders("update");
 	}
 
 	public HttpHeaders index() {
 		list = MessageService.findAll();
-		return new DefaultHttpHeaders("index").disableCaching();
+		return new DefaultHttpHeaders("index");
 	}
 	
 	public HttpHeaders edit() {
-		return new DefaultHttpHeaders("edit").disableCaching();
+		return new DefaultHttpHeaders("edit");
 	}
 	
 	public HttpHeaders editNew() {
-		MessageService.save(model);
-		return new DefaultHttpHeaders("edit-new").disableCaching();
+		return new DefaultHttpHeaders("edit-new");
 	}
 
 	public Object getModel() {
@@ -71,4 +76,21 @@ public class MessagesController implements ModelDriven<Object> {
 		}
 		this.id = id;
 	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	
 }

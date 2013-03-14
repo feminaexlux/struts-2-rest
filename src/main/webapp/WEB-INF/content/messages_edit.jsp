@@ -1,9 +1,10 @@
+<!-- This jsp renders when any MessagesController method returns "edit" -->
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <h2>Edit New</h2>
 <s:url action="messages" var="message_url" >
 	<s:param name="id">${model.id}</s:param>
 </s:url>
-<s:form action="/messages/%{model.id}" method="post">
+<s:form action="%{message_url}" method="post">
 	<s:hidden name="model.id" />
 	<s:hidden name="_method" value="put" />
 	<s:textfield name="model.text" label="Message" />

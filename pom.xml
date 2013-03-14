@@ -48,11 +48,13 @@
 	<dependency>
 		<groupId>org.apache.struts</groupId>
 		<artifactId>struts2-convention-plugin</artifactId>
+		<!-- This version needs to be the same as struts core -->
 		<version>2.3.4.1</version>
 	</dependency>
 	<dependency>
 		<groupId>org.apache.struts</groupId>
 		<artifactId>struts2-config-browser-plugin</artifactId>
+		<!-- This version needs to be the same as struts core -->
 		<version>2.3.4.1</version>
 	</dependency>        
   </dependencies>

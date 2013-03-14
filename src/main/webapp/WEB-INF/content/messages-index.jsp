@@ -1,3 +1,4 @@
+<!-- This jsp renders when any MessagesController method returns "index" -->
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <h2>Index</h2>
 <ul>

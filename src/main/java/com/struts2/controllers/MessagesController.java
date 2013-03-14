@@ -25,7 +25,7 @@ public class MessagesController implements ModelDriven<Object> {
 	private Collection<Message> list;
 	private String text;
 	private String author;
-
+	// POST request to /messages
 	public HttpHeaders create() {
 		model = new Message();
 		model.setAuthor(author);
@@ -34,30 +34,30 @@ public class MessagesController implements ModelDriven<Object> {
 		list = MessageService.findAll();
 		return new DefaultHttpHeaders("create");
 	}
-
+	// DELETE request to /messages/{id}
 	public HttpHeaders destroy() {
 		MessageService.remove(id);
 		return new DefaultHttpHeaders("destroy");
 	}
-
+	// GET request to /messages/{id}
 	public HttpHeaders show() {
 		return new DefaultHttpHeaders("show");
 	}
-
+	// PUT request to /messages/{id}
 	public HttpHeaders update() {
 		MessageService.save(model);
 		return new DefaultHttpHeaders("update");
 	}
-
+	// GET request to /messages
 	public HttpHeaders index() {
 		list = MessageService.findAll();
 		return new DefaultHttpHeaders("index");
 	}
-	
+	// GET request to /messages/{id}/edit
 	public HttpHeaders edit() {
 		return new DefaultHttpHeaders("edit");
 	}
-	
+	// GET request to /messages/new
 	public HttpHeaders editNew() {
 		return new DefaultHttpHeaders("edit-new");
 	}

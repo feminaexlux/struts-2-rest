@@ -1,3 +1,4 @@
+<!-- This jsp renders when any MessagesController method returns "show" -->
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <h2>Show</h2>
 <ul>

@@ -3,10 +3,12 @@
 "http://java.sun.com/dtd/web-app_2_3.dtd" >
 <web-app>
   <display-name>A real struts/maven hello world project</display-name>
+  	<!-- REST standard of handling action classes.  Will instantiate and call the method according to the request type -->
   	<filter>
         <filter-name>struts2</filter-name>
         <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
     </filter>
+    <!-- Struts 2 standard of handling action classes.  Will instantiate and call the execute method by default -->
 	<filter>
 	    <filter-name>struts-execute</filter-name>
 	    <filter-class>
@@ -15,10 +17,12 @@
 	</filter>
     
     <filter-mapping>
+    <!-- REST style url routing -->
         <filter-name>struts2</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 	<filter-mapping>
+	<!-- Struts 2 old style url routing -->
 		<filter-name>struts-execute</filter-name>
 		<url-pattern>*.action</url-pattern>
 	</filter-mapping>

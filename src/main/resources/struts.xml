@@ -3,12 +3,17 @@
       "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
       "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
+	<!-- Parent package where all the controller classes are located -->
     <constant name="struts.convention.package.locators" value="controllers"/>
+    <!-- Naming convention of controller classes -->
     <constant name="struts.convention.action.suffix" value="Controller"/>
+    <!-- Convention will automatically map all request type to the corresponding methods of the
+    controller classes: mapping can be found here: http://struts.apache.org/development/2.x/docs/rest-plugin.html  -->
     <constant name="struts.convention.action.mapAllMatches" value="true"/>
     <constant name="struts.convention.default.parent.package" value="rest-default"/>
     
 	<constant name="struts.devMode" value="true"/>
+	<!-- Convention will try to hotswap controller classes -->
 	<constant name="struts.convention.classes.reload" value="true" />
 	
 	<package name="default" extends="struts-default">

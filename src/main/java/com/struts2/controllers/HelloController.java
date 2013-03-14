@@ -10,11 +10,11 @@ public class HelloController {
 	public HttpHeaders index() {
 		return new DefaultHttpHeaders("index").disableCaching();
 	}
-	
+	// Direct method invocation
 	public HttpHeaders morning() {
 		return new DefaultHttpHeaders("morning").disableCaching();
 	}
-	
+	// Direct method invocation
 	public HttpHeaders salutations() {
 		return new DefaultHttpHeaders("salutations").disableCaching();
 	}

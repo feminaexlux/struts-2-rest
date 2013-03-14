@@ -1,3 +1,4 @@
+<!-- This jsp renders when any MessagesController method returns "edit-new" -->
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <h2>Edit New</h2>
 <s:form action="/messages/" method="post">
